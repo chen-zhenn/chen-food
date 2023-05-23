@@ -14,11 +14,11 @@ class Culinary(models.Model):
     def __str__(self):
         return self.name  
 class Ingredient(models.Model):
-    description =  models.TextField(null=False, blank=False)
+    description =  models.TextField(default=None, null=False, blank=False)
     deleted = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.name
+        return self.description
 class Dish(models.Model):
     name =  models.CharField(max_length=45, null=False, blank=False)
     image =  models.CharField(max_length=100, blank=False)
